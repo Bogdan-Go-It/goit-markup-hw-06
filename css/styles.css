@@ -850,7 +850,7 @@ button {
   margin-bottom: 16px;
   padding: 8px 16px;
   max-width: 360px;
-  max-height: 200px;
+  max-height: 130px;
   min-width: 360px;
   min-height: 100px;
   /* resize: vertical; */
@@ -865,11 +865,16 @@ button {
 
   border: 1px solid var(--color-navy-blue);
   border-radius: 4px;
+  outline: 1px solid transparent;
+  outline-offset: -1px;
   transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .modal-form-textarea:hover,
 .modal-form-textarea:focus {
   border: 1px solid var(--color-iris);
+}
+.modal-form-textarea:checked {
+  outline-color: var(--color-iris);
 }
 .modal-form-message {
   margin-bottom: 24px;
@@ -878,6 +883,9 @@ button {
   gap: 8px;
 }
 .modal-form-imput {
+  position: relative;
+  cursor: pointer;
+
   appearance: none;
   width: 16px;
   height: 16px;
@@ -886,6 +894,13 @@ button {
   transition: background 250ms cubic-bezier(0.4, 0, 0.2, 1),
     border 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
+.modal-form-imput-icon {
+  position: absolute;
+  margin: 4px 3px;
+  pointer-events: none;
+  fill: var(--color-white);
+}
+
 .modal-form-imput:checked {
   background: var(--color-ocean);
   border: 1px solid var(--color-ocean);
@@ -905,6 +920,14 @@ button {
   color: var(--color-slate);
 
   /* display: block; */
+}
+.modal-form-link {
+  color: var(--color-iris);
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.modal-form-link:hover,
+.modal-form-link:focus {
+  color: var(--color-ocean);
 }
 .modal-form-btn {
   display: block;
